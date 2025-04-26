@@ -11,7 +11,6 @@ from langchain_community.vectorstores import Chroma
 from dotenv import load_dotenv
 
 
-st.secrets.get()
 # Load the .env file
 load_dotenv(override=True)
 # Now get the API key
