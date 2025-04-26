@@ -11,14 +11,13 @@ from langchain_community.vectorstores import Chroma
 from dotenv import load_dotenv
 
 
-
+st.secrets.get()
 # Load the .env file
 load_dotenv(override=True)
 # Now get the API key
-openai_api_key = os.getenv("OPENAI_API_KEY")
-openai.api_key=openai_api_key
+openai_api_key = st.secrets.get("OPENAI_API_KEY")
 
-
+openai.api_key = openai_api_key
 
 
 
