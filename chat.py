@@ -75,8 +75,8 @@ def split_docs_folder(folder_name,chunk_size=600,chunk_overlap=100, file_type="t
 def create_indexing(_split_docs=[]):
     vectorstore = Chroma.from_documents(
         documents = _split_docs,
-        embedding = OpenAIEmbeddings(  
-        )
+        embedding = OpenAIEmbeddings(),
+        persist_directory=None
     )
     print("execute vector indexing")
     return vectorstore.as_retriever()
